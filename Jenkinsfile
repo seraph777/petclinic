@@ -1,5 +1,6 @@
 pipeline {
 	agent any
+    
     stages {
         stage('Build on k8 ') {
             steps {           
@@ -7,7 +8,7 @@ pipeline {
                         sh 'cp -R helm/* .'
 		        sh 'ls -ltr'
                         sh 'pwd'
-                        sh '/usr/local/bin/helm upgrade --install petclinic-app petclinic  --set image.repository=registry.hub.docker.com/seraph777/petclinic --set image.tag=1'
+                        sh '/usr/local/bin/helm upgrade --install petclinic-app petclinic  --set image.repository=registry.hub.docker.com/seraph777/petclinic --set image.tag=13'
               			
             }           
         }
